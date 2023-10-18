@@ -1,15 +1,10 @@
 <script>
-import Navbar from './components/navbar/Navbar.vue'
-import Footer from './components/footer/Footer.vue'
-export default {
-  name: 'App',
-  components: {Navbar},
-  components: {Footer}
-}
+  export default{
+    name: 'Navbar'
+  }
 </script>
 
 <template>
-  
   <navbar class="navbar">
     <ul class="navbar-content">
         <li><router-link :to="{ name: 'Hotel'}" tag="li" class="list-group-item" active-class="active">Hotel</router-link></li>
@@ -20,15 +15,6 @@ export default {
         <li><router-link :to="{ name: 'Registrieren'}" tag="li" class="list-group-item" active-class="active">Registrieren</router-link></li>
     </ul>
   </navbar>
-
-  <footer class="footer">
-    <ul>
-      <li><router-link to="/impressum">Impressum</router-link></li>
-      <li><router-link to="/help">Help</router-link></li>
-      <li><router-link to="/account">My Account</router-link></li>
-      <li><router-link to="/about-us">About</router-link></li>
-    </ul>
-  </footer>
 </template>
 
 <style>
@@ -64,38 +50,3 @@ export default {
 }
 
 </style>
-
-<style scoped>
-  .footer {
-    width: 100%;
-    position: bottom fixed;
-    bottom: 0;
-    background-color: #f8f8f8;
-    display: flex;
-    justify-content: space-around;
-    padding: 10px 0;
-    box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.1);
-  }
-  
-.footer-content {
-  display: flex;
-  justify-content: center;
-}
-
-.footer ul {
-  list-style: none;
-  display: flex;
-  gap: 20px;
-}
-
-.footer router-link {
-  text-decoration: none;
-  color: inherit;
-}
-
-.footer router-link:hover {
-  text-decoration: underline;
-}
-
-  </style>
-  
