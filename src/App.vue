@@ -22,7 +22,7 @@ export default {
   
   <Navbar />
 
-  <About />
+  <router-view />
 
   <Footer />
   
