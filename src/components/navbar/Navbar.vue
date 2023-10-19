@@ -1,52 +1,51 @@
 <script>
-  export default{
-    name: 'Navbar'
-  }
+export default {
+  name: "Navbar",
+}
 </script>
 
+<!-- bootstrap example navbar -->
+
 <template>
-  <navbar class="navbar">
-    <ul class="navbar-content">
-        <li><router-link :to="{ name: 'Hotel'}" tag="li" class="list-group-item" active-class="active">Hotel</router-link></li>
-        <li><router-link :to="{ name: 'About Us'}" tag="li" class="list-group-item" active-class="active">About Us</router-link></li>
-        <li><router-link :to="{ name: 'Zimmer'}" tag="li" class="list-group-item" active-class="active">Zimmer</router-link></li>
-        <li><router-link :to="{ name: 'Buchen'}" tag="li" class="list-group-item" active-class="active">Buchen</router-link></li>
-        <li><router-link :to="{ name: 'Login'}" tag="li" class="list-group-item" active-class="active">Login</router-link></li>
-        <li><router-link :to="{ name: 'Registrieren'}" tag="li" class="list-group-item" active-class="active">Registrieren</router-link></li>
-    </ul>
-  </navbar>
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Dropdown
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+        </li>
+      </ul>
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+
+
+
+
+
 </template>
-
-<style>
-    .navbar {
-    width: 100%;
-    position: top static;
-    bottom: 0;
-    background-color: #f8f8f8;
-    display: flex;
-    justify-content: space-around;
-    padding: 10px 0;
-    box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.1);
-  }
-  
-.navbar-content {
-  display: flex;
-  justify-content: center;
-}
-
-.navbar ul {
-  list-style: none;
-  display: flex;
-  gap: 20px;
-}
-
-.navbar router-link {
-  text-decoration: none;
-  color: inherit;
-}
-
-.navbar router-link:hover {
-  text-decoration: underline;
-}
-
-</style>
