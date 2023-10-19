@@ -1,51 +1,22 @@
+<script>
+    export default {
+        name: 'Footer',
+    }
+</script>
+
 <template>
-    <footer class="footer">
-      <ul class="footer-content">
-        <li><router-link to="/impressum">Impressum</router-link></li>
-        <li><router-link to="/help">Help</router-link></li>
-        <li><router-link to="/account">My Account</router-link></li>
-        <li><router-link to="/about-us">About</router-link></li>
+
+    <div class="container">
+    <footer class="py-3 my-4">
+      <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Home</a></li>
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Features</a></li>
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Pricing</a></li>
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">FAQs</a></li>
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">About</a></li>
       </ul>
+      <p class="text-center text-body-secondary">&copy; 2023 Company, Inc</p>
     </footer>
-  </template>
+  </div>
   
-  <script>
-  export default {
-    name: 'Footer'
-  }
-  </script>
-  
-  <style scoped>
-  .footer {
-    width: 100%;
-    position: bottom fixed;
-    bottom: 0;
-    background-color: #f8f8f8;
-    display: flex;
-    justify-content: space-around;
-    padding: 10px 0;
-    box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.1);
-  }
-  
-.footer-content {
-  display: flex;
-  justify-content: center;
-}
-
-.footer ul {
-  list-style: none;
-  display: flex;
-  gap: 20px;
-}
-
-.footer router-link {
-  text-decoration: none;
-  color: inherit;
-}
-
-.footer router-link:hover {
-  text-decoration: underline;
-}
-
-  </style>
-  
+</template>
