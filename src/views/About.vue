@@ -36,21 +36,21 @@ export default {
       <div class="carousel-inner">
         <div class="carousel-item active">
           <img
-            src="src/assets/Default_Create_a_Picture_of_a_Hotel_called_Hotel_Technikum_in_0_7e32812d-8397-4e35-b99f-bd78f779d529_1.jpeg"
+            src="src/assets/Hotel-Front-3.jpeg"
             class="d-block w-100"
             alt="..."
           />
         </div>
         <div class="carousel-item">
           <img
-            src="src/assets/Default_Create_a_Picture_of_a_Hotel_called_Hotel_Technikum_in_1_d7901d1c-35ce-4318-8c6f-b2e92bb8c4f0_1.jpeg"
+            src="src/assets/Boutique-Hotel-Lobby-4.jpeg"
             class="d-block w-100"
             alt="..."
           />
         </div>
         <div class="carousel-item">
           <img
-            src="src/assets/DreamShaper_v7_hotel_rooms_of_a_boutique_hotel_0.jpg"
+            src="src/assets/Boutique-Hotel-Rooms-4.jpeg"
             class="d-block w-100"
             alt="..."
           />
@@ -103,8 +103,67 @@ export default {
         </div>
       </div>
 
-      <!-- Weitere Abschnitte (Zimmer, Technologie, Kulinarische Erlebnisse, usw.) hier einfügen -->
+      <div class="row">
+        <div class="col-lg-8">
+          <h2>Unsere Zimmer</h2>
+          <p>
+            Unsere Zimmer und Suiten sind gestaltet, um höchsten Komfort und 
+            zeitgemäßen Stil zu bieten. Jeder Raum erzählt eine eigene Geschichte 
+            und bietet einen Zufluchtsort vor der Hektik der Stadt. Genießen Sie 
+            moderne Annehmlichkeiten und eine Ausstattung, die Ihre 
+            Erwartungen übertreffen wird.
+          </p>
+        </div>
+      </div>
 
+      <div class="row">
+        <div class="col-lg-8">
+          <h2>Innovative Technologien</h2>
+          <p>
+            Das Boutique-Hotel Technikum setzt Maßstäbe in Sachen Technologie. 
+            Von Smart-Room-Steuerungen bis hin zu High-Speed-WLAN - bei uns erleben Sie 
+            einen Aufenthalt, bei dem moderne Technologie nahtlos in die 
+            Umgebung integriert ist, ohne die Wärme und den persönlichen Service zu beeinträchtigen.
+          </p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-8">
+          <h2>Kulinarische Erlebnisse</h2>
+          <p>
+            Unser Restaurant "FusionFlavors" vereint die Aromen der Welt und bietet kulinarische Erlebnisse,
+            die Ihre Sinne verzaubern werden. Genießen Sie exquisit zubereitete Gerichte, begleitet von
+            erlesenen Weinen, in einem Ambiente, das Eleganz und Modernität vereint.
+          </p>
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="col-lg-8">
+          <h2>Veranstaltungen und Tagungen</h2>
+          <p>
+            Das Boutique-Hotel Technikum ist der ideale Ort für Veranstaltungen und Tagungen. 
+            Unsere modernen Konferenzräume sind mit neuester Technologie ausgestattet und 
+            bieten Platz für kreative Ideen und erfolgreiche Geschäftsabschlüsse.
+          </p>
+        </div>
+      </div>
+      
+
+      
+      <div class="row">
+        <div class="col-lg-8">
+          <h2>Unsere Lage</h2>
+          <p>
+            Unser Hotel liegt im Herzen der Stadt, nur wenige Schritte von den 
+            wichtigsten Sehenswürdigkeiten, Einkaufsmöglichkeiten und kulturellen Highlights 
+            entfernt. Erkunden Sie die Stadt und kehren Sie in ein luxuriöses Refugium zurück.
+          </p>
+        </div>
+      </div>
+      
+      
       <div class="row">
         <div class="col-lg-8">
           <h2>Ihr Aufenthalt bei uns</h2>
@@ -114,6 +173,16 @@ export default {
             engagiertes Team steht Ihnen rund um die Uhr zur Verfügung, um Ihre
             Wünsche zu erfüllen und Ihren Aufenthalt so angenehm wie möglich zu
             gestalten.
+          </p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-8">
+          <p>
+            Wir freuen uns darauf, Sie im Boutique-Hotel Technikum willkommen zu heißen 
+            und Ihnen eine einzigartige Erfahrung inmitten von Tradition und Innovation zu bieten. 
+            Buchen Sie noch heute und tauchen Sie ein in die Welt des modernen Luxus!
           </p>
         </div>
       </div>
