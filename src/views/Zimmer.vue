@@ -12,3 +12,35 @@
         </div>
     </div>
 </template>
+<!--<script>
+import RoomCard from "@/components/RoomCard.vue";
+
+export default {
+  name: "Zimmer",
+  components: {RoomCard},
+  data() {
+    return {
+      rooms: [
+        {
+          roomName: "Zimmer klein", price: "100 €", imagePath: "src/assets/images/Hotel-Front-1.jpg"
+        },
+        {
+          roomName: "Zimmer groß", price: "150 €", imagePath: "src/assets/images/Hotel-Front-2.jpeg",
+        },
+        {
+          roomName: "Suit", price: "250 €", imagePath: "src/assets/images/Hotel-Front-3.jpeg",
+        },
+      ]
+    }
+  }
+}
+</script>
+
+<template>
+<h2>Unsere Zimmer</h2>
+  <RoomCard v-for="room in rooms" :roomName=room.roomName :price=room.price :imagePath=room.imagePath />
+</template>
+
+<style scoped>
+
+</style>-->
