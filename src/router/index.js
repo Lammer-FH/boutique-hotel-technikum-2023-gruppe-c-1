@@ -25,6 +25,13 @@ const router = createRouter({
       name: 'Zimmer',
       component: () => import('../views/Zimmer.vue')
     },
+
+    {
+      path: '/zimmer2',
+      name: 'Zimmer2',
+      component: () => import('../views/Zimmer2.vue') // Pfad anpassen, falls erforderlich
+    },
+    
     {
       path: '/account',
       name: 'Account',
@@ -45,6 +52,7 @@ const router = createRouter({
       name: 'Registrierung',
       component: () => import('../views/Registrierung.vue')
     },
+
   ]
 })
 
