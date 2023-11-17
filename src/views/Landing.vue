@@ -3,6 +3,7 @@ import Karussell from '../components/carousel/Karussell.vue';
 
     export default {
     name: 'Landing',
+    components: { Karussell },
     data() {
         return {
             landing_images: [
@@ -10,9 +11,9 @@ import Karussell from '../components/carousel/Karussell.vue';
                 "src/assets/images/Hotel-Front-2.jpeg",
                 "src/assets/images/Hotel-Front-3.jpeg"
             ],
+            Karussell,
         };
-    },
-    components: { Karussell }
+    }
 }
 </script>
 
