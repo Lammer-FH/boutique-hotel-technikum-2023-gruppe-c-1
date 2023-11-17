@@ -58,7 +58,9 @@ export default {
         </p>
       </div>
     </div>
-    <b-nav-item to="/zimmer">Mehr Zimmer</b-nav-item>
+    
+    <b-button to="/zimmer-2">Mehr Zimmer</b-button>
+    <b-button to="/verfuegbarkeit" blue>Jetzt Buchen!</b-button>
 
   </div>
 </template>

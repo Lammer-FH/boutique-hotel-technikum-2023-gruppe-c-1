@@ -40,7 +40,7 @@ import Karussell from '../components/carousel/Karussell.vue';
                         </div>
                     </div> 
                 </div>
-                <b-button to="/zimmer" blue>Jetzt Buchen!</b-button>
+                <b-button to="/verfuegbarkeit" blue>Jetzt Buchen!</b-button>
             </div>
             <div class="container sm-8" align-self="stretch" name="get-to-know-us">
                 <div class="container mt-5 about-text">
