@@ -38,21 +38,21 @@ export default {
           <img
             src="src/assets/Hotel-Front-3.jpeg"
             class="d-block w-100"
-            alt="..."
+            alt="Hotel Front"
           />
         </div>
         <div class="carousel-item">
           <img
             src="src/assets/Boutique-Hotel-Lobby-4.jpeg"
             class="d-block w-100"
-            alt="..."
+            alt="Hotel Lobby"
           />
         </div>
         <div class="carousel-item">
           <img
             src="src/assets/Boutique-Hotel-Rooms-4.jpeg"
             class="d-block w-100"
-            alt="..."
+            alt="Hotel Zimmer"
           />
         </div>
       </div>
