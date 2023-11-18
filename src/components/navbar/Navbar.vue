@@ -1,14 +1,14 @@
 <script>
 export default {
   name: "Navbar",
-}
+};
 </script>
 
 <template>
   <div>
     <b-navbar toggleable="lg" type="dark" variant="">
       <b-navbar-brand>
-        <img src="src/assets/logo1-klein.jpeg" height="32" />
+        <img src="src/assets/logo1-klein.png" height="32" />
         Hotel Technikum
       </b-navbar-brand>
 
@@ -32,7 +32,3 @@ export default {
     </b-navbar>
   </div>
 </template>
-
-<style scoped>
-
-</style>

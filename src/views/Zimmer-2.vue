@@ -10,7 +10,7 @@ export default {
   },
   computed: {
     displayedRooms() {
-      return this.rooms.slice(0, 5);
+      return this.rooms.slice(5, 10);
     },
   },
   methods: {
@@ -187,7 +187,7 @@ export default {
         </p>
       </div>
     </div>
-    <b-nav-item to="/zimmer-2">Mehr Zimmer</b-nav-item>
+    <b-nav-item to="/zimmer">Mehr Zimmer</b-nav-item>
   </div>
 </template>
 
