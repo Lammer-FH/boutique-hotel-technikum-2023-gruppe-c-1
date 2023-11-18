@@ -1,15 +1,16 @@
 <script>
 import Karussell from '../components/carousel/Karussell.vue';
+import CarouselOrganism from "@/components/carousel/carousel-organism.vue";
 
     export default {
     name: 'Landing',
-    components: { Karussell },
+    components: {CarouselOrganism, Karussell },
     data() {
         return {
-            landing_images: [
-                "../assets/images/Boutique-Hotel-Lobby-1.jpeg",
-                "../assets/images/Boutique-Hotel-Lobby-2.jpeg",
-                "../assets/images/Hotel-Front-2.jpeg",
+            carouselImages: [
+                "src/assets/images/Boutique-Hotel-Lobby-1.jpeg",
+                "src/assets/images/Boutique-Hotel-Lobby-2.jpeg",
+                "src/assets/images/Hotel-Front-2.jpeg",
             ],
             Karussell,
         };
@@ -20,6 +21,7 @@ import Karussell from '../components/carousel/Karussell.vue';
 <template>
     <div>
     <b-container fluid>
+        <carousel-organism :image-list="carouselImages"></carousel-organism>
         <b-row >
             <b-col sm="6">
             <div class="container sm-8" align-self="stretch" name="intoduction">
@@ -38,7 +40,7 @@ import Karussell from '../components/carousel/Karussell.vue';
                                 auch ganz stressfrei bei uns im Hotel verbringen.
                             </p>
                         </div>
-                    </div> 
+                    </div>
                 </div>
                 <b-button to="/verfuegbarkeit" blue>Jetzt Buchen!</b-button>
             </div>
@@ -53,11 +55,11 @@ import Karussell from '../components/carousel/Karussell.vue';
                             Wir hier im Boutique-Hotel sind nun schon seit über 60 Jahren in der Freizeit und Kultur-Branche.
                             Bei uns haben nicht berühmte Persönlichkeit Unterkunft gesucht, sondern,d as Hotel selber war
                             bereits mehrfach das Epizentrum kulturell einschlägiger Ereignisse.
-                            Erfahren Sie mehr über das Hotel und sein Personal!    
+                            Erfahren Sie mehr über das Hotel und sein Personal!
                             </p>
                         </div>
                     </div>
-                </div> 
+                </div>
                 <b-button to="/about" blue>Über uns</b-button>
             </div>
             <div class="container sm-8" align-self="stretch" name="register-for-more-info">
@@ -71,8 +73,8 @@ import Karussell from '../components/carousel/Karussell.vue';
                             Viele wundervolle Erfahrungen, Veranstaltungen und Events erwarten Sie in der
                             Stadt Wien! Doch kann es manchmal schwer sein diese zu finden.
                             Wenn Sie immer am Laufenden bleiben wollen oder einfach nur einen tollen
-                            Urlaub planen wollen, melden Sie sich bei uns. Wir sorgen dafür, dass Sie 
-                            nichts mehr verpassen!   
+                            Urlaub planen wollen, melden Sie sich bei uns. Wir sorgen dafür, dass Sie
+                            nichts mehr verpassen!
                             Abbonieren Sie jetzt unseren Newsletter und registrieren Sie sich noch heute!
                             </p>
                         </div>
@@ -87,7 +89,7 @@ import Karussell from '../components/carousel/Karussell.vue';
                     <Karussell :imageList="landing_images"></Karussell>
                 </b-container>
             </b-col>
-        
+
         </b-row>
      </b-container>
     </div>

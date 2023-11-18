@@ -1,80 +1,15 @@
 <script>
+import CarouselOrganism from "@/components/carousel/carousel-organism.vue";
+
 export default {
   name: "About",
+    components: {CarouselOrganism},
 };
 </script>
 
 <template>
   <div>
-    <div
-      id="carouselExampleIndicators"
-      class="carousel slide"
-      data-bs-ride="carousel"
-    >
-      <div class="carousel-indicators">
-        <button
-          type="button"
-          data-bs-target="#carouselExampleIndicators"
-          data-bs-slide-to="0"
-          class="active"
-          aria-current="true"
-          aria-label="Slide 1"
-        ></button>
-        <button
-          type="button"
-          data-bs-target="#carouselExampleIndicators"
-          data-bs-slide-to="1"
-          aria-label="Slide 2"
-        ></button>
-        <button
-          type="button"
-          data-bs-target="#carouselExampleIndicators"
-          data-bs-slide-to="2"
-          aria-label="Slide 3"
-        ></button>
-      </div>
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <img
-            src="src/assets/images/Hotel-Front-3.jpeg"
-            class="d-block w-100"
-            alt="..."
-          />
-        </div>
-        <div class="carousel-item">
-          <img
-            src="src/assets/images/Boutique-Hotel-Lobby-4.jpeg"
-            class="d-block w-100"
-            alt="..."
-          />
-        </div>
-        <div class="carousel-item">
-          <img
-            src="src/assets/images/Boutique-Hotel-Rooms-4.jpeg"
-            class="d-block w-100"
-            alt="..."
-          />
-        </div>
-      </div>
-      <button
-        class="carousel-control-prev"
-        type="button"
-        data-bs-target="#carouselExampleIndicators"
-        data-bs-slide="prev"
-      >
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button
-        class="carousel-control-next"
-        type="button"
-        data-bs-target="#carouselExampleIndicators"
-        data-bs-slide="next"
-      >
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
-    </div>
+    <carousel-organism></carousel-organism>
 
     <div class="container mt-5 about-text">
       <div class="row">
@@ -107,10 +42,10 @@ export default {
         <div class="col-lg-8">
           <h2>Unsere Zimmer</h2>
           <p>
-            Unsere Zimmer und Suiten sind gestaltet, um höchsten Komfort und 
-            zeitgemäßen Stil zu bieten. Jeder Raum erzählt eine eigene Geschichte 
-            und bietet einen Zufluchtsort vor der Hektik der Stadt. Genießen Sie 
-            moderne Annehmlichkeiten und eine Ausstattung, die Ihre 
+            Unsere Zimmer und Suiten sind gestaltet, um höchsten Komfort und
+            zeitgemäßen Stil zu bieten. Jeder Raum erzählt eine eigene Geschichte
+            und bietet einen Zufluchtsort vor der Hektik der Stadt. Genießen Sie
+            moderne Annehmlichkeiten und eine Ausstattung, die Ihre
             Erwartungen übertreffen wird.
           </p>
         </div>
@@ -120,9 +55,9 @@ export default {
         <div class="col-lg-8">
           <h2>Innovative Technologien</h2>
           <p>
-            Das Boutique-Hotel Technikum setzt Maßstäbe in Sachen Technologie. 
-            Von Smart-Room-Steuerungen bis hin zu High-Speed-WLAN - bei uns erleben Sie 
-            einen Aufenthalt, bei dem moderne Technologie nahtlos in die 
+            Das Boutique-Hotel Technikum setzt Maßstäbe in Sachen Technologie.
+            Von Smart-Room-Steuerungen bis hin zu High-Speed-WLAN - bei uns erleben Sie
+            einen Aufenthalt, bei dem moderne Technologie nahtlos in die
             Umgebung integriert ist, ohne die Wärme und den persönlichen Service zu beeinträchtigen.
           </p>
         </div>
@@ -138,32 +73,32 @@ export default {
           </p>
         </div>
       </div>
-      
+
       <div class="row">
         <div class="col-lg-8">
           <h2>Veranstaltungen und Tagungen</h2>
           <p>
-            Das Boutique-Hotel Technikum ist der ideale Ort für Veranstaltungen und Tagungen. 
-            Unsere modernen Konferenzräume sind mit neuester Technologie ausgestattet und 
+            Das Boutique-Hotel Technikum ist der ideale Ort für Veranstaltungen und Tagungen.
+            Unsere modernen Konferenzräume sind mit neuester Technologie ausgestattet und
             bieten Platz für kreative Ideen und erfolgreiche Geschäftsabschlüsse.
           </p>
         </div>
       </div>
-      
 
-      
+
+
       <div class="row">
         <div class="col-lg-8">
           <h2>Unsere Lage</h2>
           <p>
-            Unser Hotel liegt im Herzen der Stadt, nur wenige Schritte von den 
-            wichtigsten Sehenswürdigkeiten, Einkaufsmöglichkeiten und kulturellen Highlights 
+            Unser Hotel liegt im Herzen der Stadt, nur wenige Schritte von den
+            wichtigsten Sehenswürdigkeiten, Einkaufsmöglichkeiten und kulturellen Highlights
             entfernt. Erkunden Sie die Stadt und kehren Sie in ein luxuriöses Refugium zurück.
           </p>
         </div>
       </div>
-      
-      
+
+
       <div class="row">
         <div class="col-lg-8">
           <h2>Ihr Aufenthalt bei uns</h2>
@@ -180,8 +115,8 @@ export default {
       <div class="row">
         <div class="col-lg-8">
           <p>
-            Wir freuen uns darauf, Sie im Boutique-Hotel Technikum willkommen zu heißen 
-            und Ihnen eine einzigartige Erfahrung inmitten von Tradition und Innovation zu bieten. 
+            Wir freuen uns darauf, Sie im Boutique-Hotel Technikum willkommen zu heißen
+            und Ihnen eine einzigartige Erfahrung inmitten von Tradition und Innovation zu bieten.
             Buchen Sie noch heute und tauchen Sie ein in die Welt des modernen Luxus!
           </p>
         </div>
