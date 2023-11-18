@@ -39,7 +39,7 @@ export default {
       ></button>
     </div>
     <div class="carousel-inner">
-      <div class="carousel-item active">
+      <div active class="carousel-item">
         <b-carousel-slide
           v-for="(image, index) in imageList"
           :key="index"

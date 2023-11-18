@@ -7,9 +7,9 @@ import Karussell from '../components/carousel/Karussell.vue';
     data() {
         return {
             landing_images: [
-                "src/assets/images/Hotel-Front-1.jpeg",
-                "src/assets/images/Hotel-Front-2.jpeg",
-                "src/assets/images/Hotel-Front-3.jpeg"
+                "../assets/images/Boutique-Hotel-Lobby-1.jpeg",
+                "../assets/images/Boutique-Hotel-Lobby-2.jpeg",
+                "../assets/images/Hotel-Front-2.jpeg",
             ],
             Karussell,
         };

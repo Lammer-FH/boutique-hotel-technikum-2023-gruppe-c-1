@@ -59,7 +59,7 @@ export default {
       </div>
     </div>
     
-    <b-button to="/zimmer-2">Mehr Zimmer</b-button>
+    <b-button to="/zimmer">Mehr Zimmer</b-button>
     <b-button to="/verfuegbarkeit" blue>Jetzt Buchen!</b-button>
 
   </div>

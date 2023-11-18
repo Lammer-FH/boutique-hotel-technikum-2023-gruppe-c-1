@@ -31,6 +31,16 @@ const router = createRouter({
       component: () => import('../views/Zimmer-2.vue')
     },
     {
+      path: '/zimmer-3',
+      name: 'Zimmer-3',
+      component: () => import('../views/Zimmer-3.vue')
+    },
+    {
+      path: '/zimmer-4',
+      name: 'Zimmer-4',
+      component: () => import('../views/Zimmer-4.vue')
+    },
+    {
       path: '/account',
       name: 'Account',
       component: () => import('../views/Account.vue')
@@ -54,6 +64,11 @@ const router = createRouter({
       path: '/verfuegbarkeit',
       name: 'Verfuegbarkeit',
       component: () => import('../views/Verfuegbarkeit.vue')
+    },
+    {
+      path: '/karussell',
+      name: 'Karussell',
+      component: () => import('../components/carousel/Karussell.vue')
     },
   ]
 })
