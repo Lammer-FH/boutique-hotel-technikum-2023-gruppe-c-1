@@ -6,13 +6,17 @@ export default {
   data() {
     return {
       rooms: [],
+      currentPage: 1,
+      itemsPerPage: 5
     };
   },
   computed: {
-    displayedRooms() {
-      return this.rooms.slice(0, 5);
-    },
-  },
+  displayedRooms() {
+    let start = (this.currentPage - 1) * this.itemsPerPage;
+    let end = start + this.itemsPerPage;
+    return this.rooms.slice(start, end);
+  }
+},
   methods: {
     hasExtra(room, extraName) {
       return room.extras.some(
@@ -185,9 +189,17 @@ export default {
           </svg>
           <i class="fas fa-wind"></i> Barrierefrei
         </p>
+        <hr />
       </div>
     </div>
-    <b-nav-item to="/zimmer-2">Mehr Zimmer</b-nav-item>
+
+    <b-pagination
+  v-model="currentPage"
+  :total-rows="rooms.length"
+  :per-page="itemsPerPage"
+  aria-controls="my-room-list"
+></b-pagination>
+
   </div>
 </template>
 
