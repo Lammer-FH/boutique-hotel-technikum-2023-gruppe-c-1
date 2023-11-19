@@ -1,5 +1,6 @@
 <script>
 import axios from "axios";
+import { useBookingStore } from "../stores/bookingStore";
 
 export default {
   name: "Zimmer",
@@ -8,11 +9,11 @@ export default {
       rooms: [],
       currentPage: 1,
       itemsPerPage: 5,
-      // U3 Test
       error: null,
       fromDate: "",
       toDate: "",
       availabilityMessage: "",
+      isRoomAvailable: false,
     };
   },
 
@@ -25,6 +26,15 @@ export default {
   },
 
   methods: {
+    setBookingData(roomId, fromDate, toDate) {
+      const store = useBookingStore();
+      store.setBookingData({
+        roomId,
+        fromDate: this.formatDate(this.fromDate),
+        toDate: this.formatDate(this.toDate),
+      });
+    },
+
     hasExtra(room, extraName) {
       return room.extras.some(
         (extra) =>
@@ -63,8 +73,11 @@ export default {
         );
         console.log("API-Antwort:", response);
         if (response.data.available === true) {
+          this.setBookingData(roomId, formattedFromDate, formattedToDate);
+          this.isRoomAvailable = true;
           this.availabilityMessage =
             "✅ Das Zimmer ist in diesem Zeitraum verfügbar.";
+          // console.log(roomId, formattedFromDate, formattedToDate, this.isRoomAvailable);
         } else {
           this.availabilityMessage =
             "❌ Das Zimmer ist in diesem Zeitraum leider nicht verfügbar.";
@@ -86,6 +99,17 @@ export default {
       console.error(error);
     }
   },
+  
+  bookRoom(roomId) {
+    const store = useBookingStore();
+    store.setBookingData({
+      roomId,
+      fromDate: this.formatDate(this.fromDate),
+      toDate: this.formatDate(this.toDate),
+    });
+    this.$router.push('/booking');
+  },
+
 };
 </script>
 
@@ -247,6 +271,16 @@ export default {
             >Verfügbarkeit prüfen</b-button
           >
           <p v-if="availabilityMessage">{{ availabilityMessage }}</p>
+          <!-- U4 -->
+          <!-- <b-button v-if="availabilityMessage.includes('✅')" @click="">Zimmer buchen</b-button> -->
+          
+          <router-link to="/booking">
+            <b-button
+              v-if="isRoomAvailable === true"
+              >Zimmer buchen</b-button
+            >
+          </router-link>
+
         </div>
 
         <hr />
@@ -259,7 +293,6 @@ export default {
       :per-page="itemsPerPage"
       aria-controls="my-room-list"
     ></b-pagination>
-    
   </div>
 </template>
 
