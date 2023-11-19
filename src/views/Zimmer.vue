@@ -7,22 +7,72 @@ export default {
     return {
       rooms: [],
       currentPage: 1,
-      itemsPerPage: 5
+      itemsPerPage: 5,
+      // U3 Test
+      error: null,
+      fromDate: "",
+      toDate: "",
+      availabilityMessage: "",
     };
   },
+
   computed: {
-  displayedRooms() {
-    let start = (this.currentPage - 1) * this.itemsPerPage;
-    let end = start + this.itemsPerPage;
-    return this.rooms.slice(start, end);
-  }
-},
+    displayedRooms() {
+      let start = (this.currentPage - 1) * this.itemsPerPage;
+      let end = start + this.itemsPerPage;
+      return this.rooms.slice(start, end);
+    },
+  },
+
   methods: {
     hasExtra(room, extraName) {
       return room.extras.some(
         (extra) =>
           Object.keys(extra)[0] === extraName && Object.values(extra)[0] === 1
       );
+    },
+
+    formatDate(date) {
+      if (!date) return "";
+      const d = new Date(date);
+      let month = "" + (d.getMonth() + 1);
+      let day = "" + d.getDate();
+      const year = d.getFullYear();
+
+      if (month.length < 2) month = "0" + month;
+      if (day.length < 2) day = "0" + day;
+
+      return [year, month, day].join("-");
+    },
+
+    async checkAvailability(roomId) {
+      if (!this.fromDate || !this.toDate) {
+        this.availabilityMessage = "Bitte wählen Sie einen gültigen Zeitraum.";
+        return;
+      }
+
+      const formattedFromDate = this.formatDate(this.fromDate);
+      const formattedToDate = this.formatDate(this.toDate);
+      console.log(
+        `Prüfe Verfügbarkeit für Zimmer ${roomId} vom ${formattedFromDate} bis ${formattedToDate}`
+      );
+
+      try {
+        const response = await axios.get(
+          `https://boutique-hotel.helmuth-lammer.at/api/v1/room/${roomId}/from/${formattedFromDate}/to/${formattedToDate}`
+        );
+        console.log("API-Antwort:", response);
+        if (response.data.available === true) {
+          this.availabilityMessage =
+            "✅ Das Zimmer ist in diesem Zeitraum verfügbar.";
+        } else {
+          this.availabilityMessage =
+            "❌ Das Zimmer ist in diesem Zeitraum leider nicht verfügbar.";
+        }
+      } catch (error) {
+        console.error("Fehler beim API-Aufruf:", error);
+        this.availabilityMessage = "Fehler beim Überprüfen der Verfügbarkeit.";
+      }
     },
   },
   async mounted() {
@@ -189,17 +239,27 @@ export default {
           </svg>
           <i class="fas fa-wind"></i> Barrierefrei
         </p>
+
+        <div class="availability-checker">
+          <input v-model="fromDate" type="date" placeholder="Von" />
+          <input v-model="toDate" type="date" placeholder="Bis" />
+          <b-button @click="checkAvailability(room.id)"
+            >Verfügbarkeit prüfen</b-button
+          >
+          <p v-if="availabilityMessage">{{ availabilityMessage }}</p>
+        </div>
+
         <hr />
       </div>
     </div>
 
     <b-pagination
-  v-model="currentPage"
-  :total-rows="rooms.length"
-  :per-page="itemsPerPage"
-  aria-controls="my-room-list"
-></b-pagination>
-
+      v-model="currentPage"
+      :total-rows="rooms.length"
+      :per-page="itemsPerPage"
+      aria-controls="my-room-list"
+    ></b-pagination>
+    
   </div>
 </template>
 
