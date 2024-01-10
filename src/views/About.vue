@@ -36,21 +36,21 @@ export default {
       <div class="carousel-inner">
         <div class="carousel-item active">
           <img
-            src="src/assets/Hotel-Front-3.jpeg"
+            src="../assets/Hotel-Front-3.jpeg"
             class="d-block w-100"
             alt="Hotel Front"
           />
         </div>
         <div class="carousel-item">
           <img
-            src="src/assets/Boutique-Hotel-Lobby-4.jpeg"
+            src="../assets/Boutique-Hotel-Lobby-4.jpeg"
             class="d-block w-100"
             alt="Hotel Lobby"
           />
         </div>
         <div class="carousel-item">
           <img
-            src="src/assets/Boutique-Hotel-Rooms-4.jpeg"
+            src="../assets/Boutique-Hotel-Rooms-4.jpeg"
             class="d-block w-100"
             alt="Hotel Zimmer"
           />

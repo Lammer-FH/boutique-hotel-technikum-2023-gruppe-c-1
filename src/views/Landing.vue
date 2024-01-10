@@ -100,21 +100,21 @@
                         <div class="carousel-inner">
                             <div class="carousel-item active">
                             <img
-                                src="src/assets/Boutique-Hotel-Lobby-1.jpeg"
+                                src="../assets/Boutique-Hotel-Lobby-1.jpeg"
                                 class="d-block w-100"
                                 alt="..."
                             />
                             </div>
                             <div class="carousel-item">
                             <img
-                                src="src/assets/Boutique-Hotel-Lobby-2.jpeg"
+                                src="../assets/Boutique-Hotel-Lobby-2.jpeg"
                                 class="d-block w-100"
                                 alt="..."
                             />
                             </div>
                             <div class="carousel-item">
                             <img
-                                src="src/assets/Boutique-Hotel-Lobby-3.jpeg"
+                                src="../assets/Boutique-Hotel-Lobby-3.jpeg"
                                 class="d-block w-100"
                                 alt="..."
                             />

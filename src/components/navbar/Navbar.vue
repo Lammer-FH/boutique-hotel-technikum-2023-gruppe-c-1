@@ -8,7 +8,7 @@ export default {
   <div>
     <b-navbar toggleable="lg" type="dark" variant="">
       <b-navbar-brand>
-        <img src="src/assets/logo1-klein.png" height="32" />
+        <img src="../assets/logo1-klein.png" height="32" />
         Hotel Technikum
       </b-navbar-brand>
 
