@@ -13,15 +13,15 @@ export const useBookingApiStore = defineStore("bookingApi",{
   }),
   
   actions: {
-      postBooking(bookingData) {
+      async postBooking(bookingData) {
 	      let data = {
 	        firstname: bookingData.firstname,
-	        lastName: bookingData.lastName,
+	        lastname: bookingData.lastname,
 	        email: bookingData.emailAdress,
 	        birthdate: bookigData.birthday,
-          breakfast: bookigData.breakfast,
+          	breakfast: bookigData.breakfast,
 	      };
-	      return axios.post(
+	      await axios.post(
 	        apiUrl + 
 	        "room/" + bookingData.selectRoomId +
 	        "/from" + bookingData.fromDate +
@@ -33,8 +33,8 @@ export const useBookingApiStore = defineStore("bookingApi",{
 	      }).catch((error) => {
 	        this.$state.isValid = false;
 	        this.$state.bookingId = 0;
-          this.error = "An error has been detected";
-          console.log(error);
+          	this.error = "An error has been detected";
+          	console.log(error);
 	      });
       },      
   },
