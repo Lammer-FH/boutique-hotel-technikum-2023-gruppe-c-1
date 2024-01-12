@@ -1,10 +1,9 @@
 <script>
-import axios from "axios";
-import { useBookingStore } from "../stores/bookingStore";
 import { useRoomApiStore } from "../stores/roomApiStore";
 
 export default {
   name: "Zimmer",
+  props: ["data"],
   data() {
     return {
       rooms: [],
@@ -54,11 +53,6 @@ export default {
       tomorrow.setDate(tomorrow.getDate() + 1 );
       return this.dateToString(tomorrow);
     },
-    displayedRooms() {
-      let start = (this.currentPage - 1) * this.itemsPerPage;
-      let end = start + this.itemsPerPage;
-      return this.rooms.slice(start, end);
-    },
   },
 
   methods: {
@@ -92,16 +86,16 @@ export default {
       })
       setTimeout(() => {},500);
     },
-    sendDataToBookingView(){
-      const data = {
+    sendDataToBookingView(room){
+      const roomData = {
         fromDate:this.fromDate,
         toDate: this.toDate,
-			  availableRooms: this.room,
+			  room: room.id,
 			  validDate: this.validDate,
       };
-      this.$emit(data);
+      this.$emit("selected-room", roomData);
     },
-    async continueToBookingRoom(room) {
+    continueToBookingRoom(room) {
       this.roomApi.fetchRoomDetails().then(() => {
         this.sendDataToBookingView(room);
       })
@@ -305,3 +299,4 @@ img {
   height: 50%;
 }
 </style>
+../stores/bookingApiStore
