@@ -3,7 +3,8 @@ import { useRoomApiStore } from "../stores/roomApiStore";
 
 export default {
   name: "Zimmer",
-  props: ["data"],
+  props: {},
+  emits: ["data"],
   data() {
     return {
       rooms: [],
@@ -77,6 +78,7 @@ export default {
       this.roomApi.checkAvailability(room.id, this.fromDate, this.toDate).then(() => {
         if(this.roomApi.checkAvailabilityErrorCode != 200){
           this.error = true;
+          console.log(error);
         }else{
           if(this.roomApi.isRoomAvailable){
             this.availableRooms.push(room);
@@ -86,14 +88,14 @@ export default {
       })
       setTimeout(() => {},500);
     },
-    sendDataToBookingView(room){
-      const roomData = {
+    sendDataToBookingView(){
+      const data = {
         fromDate:this.fromDate,
         toDate: this.toDate,
-			  room: room.id,
+			  availableRooms: this.availableRooms.id,
 			  validDate: this.validDate,
       };
-      this.$emit("selected-room", roomData);
+      this.$emit("selected-room", data);
     },
     continueToBookingRoom(room) {
       this.roomApi.fetchRoomDetails().then(() => {
@@ -282,7 +284,7 @@ export default {
         </b-row>
         <b-row>
           <router-link to="/booking">
-            <b-button v-model="continueToBookingRoom">
+            <b-button @click="continueToBookingRoom">
               Zimmer buchen
             </b-button>
           </router-link>
@@ -299,4 +301,3 @@ img {
   height: 50%;
 }
 </style>
-../stores/bookingApiStore

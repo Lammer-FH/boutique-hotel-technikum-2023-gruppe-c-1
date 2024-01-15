@@ -1,5 +1,4 @@
 <script>
-    import { useLoginHandlerApiStore } from '../stores/loginHandlerApiStore';
     import { useAccountCreationApiStore } from '../stores/accountCreationApiStore';
     export default
     {
@@ -22,9 +21,15 @@
         methods: {
             register(){
                 if (this.tos == true && this.dataPrivacyAggree == true){
-                    this.loginHandlerApi.registerUser(this.userData);
+                    this.accountCreationApi.registerUser(this.userData);
                 }
-            }   
+            },
+            agreeDataPrivacy(){
+              this.dataPrivacyAggree = true;
+            },
+            agreeTermsOfService(){
+              this.tos = true;
+            },   
         },
     }
 </script>
@@ -32,7 +37,7 @@
 <template>
     <b-container><b-col>
     <h3>Neuen Account anlegen?</h3>
-    <form @submit.prevent="login()" class="form-control">
+    <form @submit.prevent="register()" class="form-control">
         <div class="mb-3">
       <label for="firstname" class="form-label">Vorname</label>
       <input
@@ -89,6 +94,7 @@
         class="form-check-input"
         id="terms-of-service"
         v-model="tos"
+        @change="agreeTermsOfService()"
         required
       />
       <label class="form-check-label" for="terms-of-service">AGB</label>
@@ -99,11 +105,12 @@
         class="form-check-input"
         id="data-privacy-aggreement"
         v-model="dataPrivacyAggree"
+        @change="agreeDataPrivacy()"
         required
       />
       <label class="form-check-label" for="data-privacy-aggreement">Datenschutzrichtlinien</label>
     </div>   
-    <b-button @click="registerUser()">Regstrieren</b-button>
+    <b-button @click="register()">Regstrieren</b-button>
   </form>
 </b-col>
 </b-container>

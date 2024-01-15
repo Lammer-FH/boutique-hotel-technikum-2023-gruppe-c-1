@@ -8,33 +8,39 @@ export default {
   props: ["bookingData"],
   data() {
     return {
-	fromDate: "",
-	toDate: "",
-	numberOfGuests: 1,
-	maxNumberOfGuests: 2,
-	bookingApi: useBookingApiStore(),
-	selectRoomId: null,
-	validInput: false,
-	room: null,
-  rooms: [],
-	breakfast: true,
-	tos: false,
-	dataPrivacyAggree: false,
-  firstName: "",
-  lastName: "",
-	email: "",
-	emailConfirm: "",
-	birthday: "",
+	    fromDate: "",
+	    toDate: "",
+	    numberOfGuests: 1,
+	    maxNumberOfGuests: 2,
+	    bookingApi: useBookingApiStore(),
+	    selectRoomId: null,
+	    validInput: false,
+	    room: "",
+      rooms: [],
+	    breakfast: true,
+	    tos: false,
+	    dataPrivacyAggree: false,
+      firstName: "",
+      lastName: "",
+	    email: "",
+	    emailConfirm: "",
+	    birthday: "",
+      isConfirmationWindowVisible: false,
+      confirmedBookingCheckbox: false,
     };
   },
+  created() {
+    Zimmer.on('selected-room', this.handleRoomData);
+  },
   computed: {
-    handleRoomData(roomData){
-        this.selectRoomId = roomData.room;
-	      this.fromDate = roomData.fromDate;
-	      this.toDate = roomData.toDate;  
-        this.room = roomData.room;
+    handleRoomData(data){
+        this.selectRoomId = data.availableRooms.id;
+	      this.fromDate = data.fromDate;
+	      this.toDate = data.toDate;  
+        this.room = data.availableRooms.id;
+        this.room.pushRoomDataIntoRoomsArray();
     },
-    pushRoomDataIntoRoomsArray(){
+    pushRoomDataIntoRoomsArray(room){
       this.rooms.push(room);
     },
   },
@@ -50,7 +56,7 @@ export default {
         fromDate: this.fromDate,
         toDate: this.toDate,
         numberOfGuests: this.numberOfGuests,
-	      
+
 	    };
       this.$emit("booking-data", bookingData);
 	    this.submitBooking(bookingData);
@@ -74,6 +80,21 @@ export default {
 	      alert (error);
 	      console.log(error);
 	    }
+    },
+    showConfirmationPopUp(){
+      this.isConfirmationWindowVisible = true;
+    }, 
+    confirmBookingSubmission(){
+      if(this.confirmedBookingCheckbox = true){
+        this.confirmBookingData();
+        this.isConfirmationWindowVisible = false;
+      };
+    },
+    cancelBooking(){
+      this.isConfirmationWindowVisible = false;
+    },
+    agreeToBookingConditions(){
+      this.confirmedBookingCheckbox = true;
     },
   },
 };
@@ -238,7 +259,7 @@ export default {
       </div>
     </b-col>
     <b-col>
-  <form @submit.prevent="submitBooking" class="needs-validation" novalidate>
+  <form @submit.prevent="confirmBookingSubmission" class="needs-validation" novalidate>
     <div class="mb-3">
       <label for="firstName" class="form-label">Vorname</label>
       <input
@@ -318,7 +339,25 @@ export default {
       />
       <label class="form-check-label" for="data-privacy-aggreement">Datenschutzrichtlinien</label>
     </div>
-    <b-button @click="confirmBookingData()">Zimmer buchen</b-button>
+    <b-modal v-model="isConfirmationWindowVisible" title="isConfirmationWindowVisible">
+      <b-col>
+      <p>
+        Sind Sie sich sicher, dass Ihre angegebenen Daten richtig sind?
+      </p>
+      <b-form-checkbox v-model="confirmedBookingCheckbox" @click="agreeToBookingConditions">
+        Ich bestätige hiermit eine zahlungspflichtige Reservierung dieses Zimmers.
+      </b-form-checkbox>
+    </b-col>
+    <b-col>
+      <b-row>
+      <b-button @click="confirmBookingSubmission" variant="secondary">Buchen</b-button>
+    </b-row>
+    <b-row>
+      <b-button @click="cancelBooking" variant="secondary">Abbrechen</b-button>
+    </b-row>
+    </b-col>
+    </b-modal>
+    <b-button @click="showConfirmationPopUp">Zimmer buchen</b-button>
   </form>
 </b-col>
   </b-container>

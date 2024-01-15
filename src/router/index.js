@@ -49,7 +49,12 @@ const router = createRouter({
       path: '/booking',
       name: 'Booking',
       component: () => import('../views/Booking.vue')
-    }
+    },
+    {
+      password: '/booking-confirmation',
+      name: 'Confirmed Booking',
+      component: () => import('../views/ConfirmedBooking.vue')
+    },
   ]
 })
 
